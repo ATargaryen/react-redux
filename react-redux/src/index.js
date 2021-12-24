@@ -3,11 +3,20 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {createStore} from 'redux'
+import {Provider} from 'react-redux'
+import MainReducer from './Service/Reducers/MainReducer';
+
+const store = createStore(MainReducer)
+
+console.log('STEP 1/4 Default : store data in Store redux');
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 );
 
